@@ -7,3 +7,4 @@ class PulseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pulse 
         fields = '__all__'
+        read_only_fields = ('id',)
