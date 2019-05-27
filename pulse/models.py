@@ -39,5 +39,8 @@ class Pulse(models.Model):
                 CheckConstraint(check=Q(polar_angle__gte=0) & Q(polar_angle__lte=1), name='polar_angle_range'),
                 ]
 
+    class JSONAPIMeta:
+        resource_name = "pulses"
+
     def __str__(self):
         return "%s - %s" % (self.name, self.type)

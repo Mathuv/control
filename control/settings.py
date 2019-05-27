@@ -207,6 +207,9 @@ LOGGING = {
     }
 }
 
+JSON_API_FORMAT_FIELD_NAMES = 'camelize'
+JSON_API_FORMAT_TYPES = 'camelize'
+
 # django rest framework json api specific config
 REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
@@ -223,7 +226,8 @@ REST_FRAMEWORK = {
         # If you're performance testing, you will want to use the browseable API
         # without forms, as the forms can generate their own queries.
         # If performance testing, enable:
-        # 'example.utils.BrowsableAPIRendererWithoutForms',
+        # 'pulse.utils.BrowsableAPIRendererWithoutForms',
+        # 'pulse.utils.NoHTMLFormBrowsableAPIRenderer',
         # Otherwise, to play around with the browseable API, enable:
         'rest_framework.renderers.BrowsableAPIRenderer'
     ),
