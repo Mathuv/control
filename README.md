@@ -153,6 +153,61 @@ Name: PulseViewSet
 
 Standard ModelViewSet
 
+## To locally run the server
+
+Requirements:
+ 
+ Python 3.6, 
+ Django, 
+ Django Rest Framework, 
+ Django Rest Framework JSON API, 
+ Postgres
+ 
+ 
+ Steps to run the server locally
+ 
+ 1. Create new database on Postgres and set following environment variables
+ 
+     ```.env
+    "NAME": os.environ.get("POSTGRES_DB", "postgres"),
+    "USER": os.environ.get("POSTGRES_USER", "postgres"),
+    "PASSWORD": os.environ.get("POSTGRES_PASSWORD", ""),
+    "HOST": os.environ.get("DATABASE_URL", "postgres"),
+    "PORT": os.environ.get("POSTGRES_PORT", "5432"),
+    ```
+ 2. Clone the git repository
+ 
+     ```bash
+     git clone https://github.com/Mathuv/control.git
+     ```
+ 
+ 3. Create python virtual environment with python 3.6
+ 
+     ```bash
+    cd control
+    python -m venv .env
+    ```
+
+ 4. Activate the virtual environment and install the python requirements
+     ```bash
+    source .env/bin/activate
+    pip install -r requirements.txt
+
+    ```
+
+5. Performa database migration (make sure the environment variables related to db connection are set)
+    ```bash
+    ./manage.py migrate
+    ```
+
+6. Run the django development server
+    ```bash
+    ./manage.py runserver
+    ```
+
+You can access the REST API under
+http://localhost:8000/api/v1/pulses/
+
 ## Work in Progress
 
 1. Upload pulses in CSV format
