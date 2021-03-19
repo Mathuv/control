@@ -1,6 +1,6 @@
 Django==2.2.1
 django-filter==2.1.0
-djangorestframework==3.9.4
+djangorestframework==3.11.2
 djangorestframework-jsonapi==2.7.0
 greenlet==0.4.15
 inflection==0.3.1
